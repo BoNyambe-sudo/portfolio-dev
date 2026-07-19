@@ -4,7 +4,12 @@ import Facebook from "./icons/Facebook.astro";
 import Instagram from "./icons/Instagram.astro";
 import Twitter from "./icons/Twitter.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
-import { facebookLink, instagramLink, linkedinLink, xLink } from "@/lib/constants";
+import {
+  facebookLink,
+  instagramLink,
+  linkedinLink,
+  xLink,
+} from "@/lib/constants";
 
 const currentYear = new Date().getFullYear();
 const navLinks = [
@@ -17,12 +22,14 @@ const navLinks = [
 ];
 ---
 
-<footer class="flex flex-col-reverse md:flex-row items-center justify-center gap-6 border-t text-sm text-muted-foreground p-4 text-center md:text-start">
+<footer
+  class="flex flex-col-reverse md:flex-row items-center justify-center gap-6 border-t text-sm text-muted-foreground p-4 text-center md:text-start"
+>
   <p class="flex items-center gap-2">
     <Logo size={24} class="font-semibold" />
     <span class="text-xs">© {currentYear} All rights reserved</span>
   </p>
-  <div class="flex flex-col md:flex-row items-center gap-2 text-xs">
+  <div class="flex flex-col md:flex-row items-center gap-2 text-sm">
     {
       navLinks.map((link) => (
         <a class="hover:text-primary" href={link.href}>
@@ -31,10 +38,38 @@ const navLinks = [
       ))
     }
     <div class="flex gap-2 items-center">
-      <a href={facebookLink} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook size={12} /></a>
-      <a href={instagramLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={12} /></a>
-      <a href={xLink} target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter size={12} /></a>
-      <a href={linkedinLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LinkedIn size={12} /></a>
+      <a
+        href={facebookLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        class="inline-flex items-center justify-center min-h- min-w- rounded-md hover:bg-accent"
+        ><Facebook size={16} /></a
+      >
+      <a
+        href={instagramLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        class="inline-flex items-center justify-center min-h- min-w- rounded-md hover:bg-accent"
+        ><Instagram size={16} /></a
+      >
+      <a
+        href={xLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Twitter"
+        class="inline-flex items-center justify-center min-h- min-w- rounded-md hover:bg-accent"
+        ><Twitter size={16} /></a
+      >
+      <a
+        href={linkedinLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        class="inline-flex items-center justify-center min-h- min-w- rounded-md hover:bg-accent"
+        ><LinkedIn size={16} /></a
+      >
     </div>
   </div>
 </footer>
